@@ -3,23 +3,10 @@ import PackageDescription
 
 let package = Package(
     name: "DocScannerSDK",
-    platforms: [
-        .macOS(.v13)
-    ],
-    products: [
-        .library(
-            name: "DocScannerSDK",
-            targets: ["DocScannerSDK"]),
-    ],
+    platforms: [.macOS(.v13)],
+    products: [.library(name: "DocScannerSDK", targets: ["DocScannerSDK"])],
     targets: [
-        .target(
-            name: "DocScannerSDK",
-            dependencies: [],
-            path: "Sources/DocScannerSDK"
-        ),
-        .testTarget(
-            name: "DocScannerSDKTests",
-            dependencies: ["DocScannerSDK"]
-        ),
+        .target(name: "DocScannerSDK", path: "Sources/DocScannerSDK"),
+        .testTarget(name: "DocScannerSDKTests", dependencies: ["DocScannerSDK"])
     ]
 )
